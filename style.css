@@ -1,4 +1,6 @@
-.navbar{
-    background-color: #181714;
-    overflow: hidden;
+body {
+    background-color: #000000; /* 將背景顏色設定為黑色 (也可以寫 #000000) */
+    color: #ffffff;            /* 將預設的文字顏色設定為白色 */
+    margin: 0;               /* 移除網頁預設的白邊 */
+    font-family: sans-serif; /* 設定一個乾淨的無襯線字體 */
 }
