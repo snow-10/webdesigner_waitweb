@@ -73,7 +73,7 @@ body {
     animation: float 1.2s ease-in-out infinite alternate;
 }
 
-/* 定義螢火蟲上下浮動與明滅 */
+/* 定義螢火蟲上下飄動與明滅 */
 @keyframes float {
     0% { 
         transform: translateY(25px) scale(1.0); 
