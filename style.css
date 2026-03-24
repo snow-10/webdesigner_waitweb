@@ -14,7 +14,8 @@ body {
 /* 導覽列樣式 */
 .navbar {
     background-color: #000000;
-    padding: 5px 0;  /*高 寬*/
+    padding: 5px 0;
+    width: 100%; /* 確保導覽列背景佔滿全寬 */
 }
 
 /* .container {
@@ -28,34 +29,34 @@ body {
 
 .navbar-nav {
     display: flex;
-    align-items: center; /* 垂直對齊 */
-    justify-content: center; /* 讓內容靠右 */
+    align-items: center; /* 讓內容垂直置中 */
+    justify-content: space-between; /* 將內容推向兩側：Logo在左，常見問答在右 */
+    
+    /* 透過設定最大寬度並 margin auto，讓整個區塊「置中」 */
+    /* 這樣 Logo 就會剛好落在「中間偏左」的位置，而不是緊貼螢幕最左邊 */
+    max-width: 1000px; 
+    margin: 0 auto; 
+    
     list-style: none;
-    margin: 0;
-    padding: 0;
-    gap: 15px; /* 項目之間的間距 */
+    padding: 0 20px; /* 給左右兩側一點呼吸空間 */
 }
 
 .nav-item1 {
     display: flex;
-    justify-content: center; /* 水平置中 */
-    align-items: center;     /* 垂直置中 */
-    
-    /* 你原本的樣式 */
+    justify-content: center;
+    align-items: center;
     list-style: none;
     color: white;
-    height: 20px;           /* 確保容器有高度，置中才明顯 */
-    margin: 20px;
+    height: 20px;
+    /* 移除了原本過大的 margin，讓 space-between 自然發揮作用 */
 }
-.nav-item2{
+.nav-item2 {
     list-style: none;
     color: white;
     text-decoration: none;
     display: flex;
-    gap: 20px;
-    margin: 20px;
-    padding: 50px;
     align-items: center;
+    /* 移除了原本的 padding: 50px 與 margin，避免把元素擠壓變形 */
 }
 
 
@@ -63,6 +64,15 @@ body {
     color: #d4ff00;
 } */
 
+.waiting-text{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 117.5%;
+    max-width: 2000px; 
+    padding: 0 20px;
+    margin-top: -30px;
+}
 
 /* 中央 Loading 區塊 */
 .loading-container {
@@ -79,7 +89,8 @@ body {
     gap: 25px;
     height: 80px; /* 給予上下飄動的空間 */
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    margin-top: 20px;
 }
 
 /* 單顆螢火蟲的樣式 */
@@ -121,6 +132,8 @@ body {
     font-weight: bold;
     /* 讓文字也有輕微的呼吸燈效果 */
     animation: pulse 1.5s infinite alternate;
+    margin-top: -10px;
+    margin-bottom: 20px;
 }
 
 @keyframes pulse {
