@@ -5,7 +5,6 @@ body {
     padding: 0;
     font-family: 'Helvetica Neue', Arial, '微軟正黑體', sans-serif;
     display: flex;
-    /* justify-content: center; */
     align-items: center;
     flex-direction: column;
     height: 100vh;
@@ -13,7 +12,6 @@ body {
 
 /* 導覽列樣式 */
 .navbar {
-    background-color: #000000;
     padding: 5px 0;
     width: 50%; /* 確保導覽列背景佔滿全寬 */
 }
@@ -50,7 +48,7 @@ body {
     width: 108%;
     max-width: 2000px; 
     padding: 0 20px;
-    margin-top: -25px;
+    margin-top: -15px;
 }
 
 /* 中央 Loading 區塊 */
@@ -85,39 +83,39 @@ body {
 }
 
 /* 讓每顆螢火蟲的動畫開始時間不同，達到「上下錯開」的效果 */
-.firefly:nth-child(1) { animation-delay: 0s; }
+/* .firefly:nth-child(1) { animation-delay: 0s; }
 .firefly:nth-child(2) { animation-delay: -0.6s; }
 .firefly:nth-child(3) { animation-delay: -0.3s; }
 .firefly:nth-child(4) { animation-delay: -0.9s; }
-.firefly:nth-child(5) { animation-delay: -0.2s; }
+.firefly:nth-child(5) { animation-delay: -0.2s; } */
 
 /* 定義螢火蟲上下浮動與明滅的關鍵影格 */
 @keyframes float {
     0% { 
-        transform: translateY(25px) scale(0.8); 
-        opacity: 0.4; 
+        transform: translateY(25px) scale(1.0); 
+        opacity: 0; 
     }
     100% { 
-        transform: translateY(-25px) scale(1.2); 
-        opacity: 1; 
+        transform: translateY(-25px) scale(1.0); 
+        opacity: 0.8; 
     }
 }
 
 /* Loading 文字樣式 */
 .loading-text {
-    font-size: 24px;
-    letter-spacing: 3px;
+    font-size: 23px;
+    letter-spacing: 5px;
     color: #d4ff00;
     font-weight: bold;
     /* 讓文字也有輕微的呼吸燈效果 */
-    animation: pulse 1.5s infinite alternate;
+    animation: pulse 1.2s infinite alternate;
     margin-top: -10px;
     margin-bottom: 20px;
 }
 
 @keyframes pulse {
-    0% { opacity: 0.6; }
-    100% { opacity: 1; }
+    0% { opacity: 0.2; }
+    100% { opacity: 0.6; }
 }
 
 .faq-container {

@@ -14,21 +14,14 @@
                 <img alt="東勢林場" width="180" height="60" src="https://universal.codes/f505fc38d383419ff80aacdb84397ac8.png">
             </a>
             <ul class="navbar-nav">
-                <li class="nav-item1">系統人數過載，感謝您的耐心等候。</li>
-                <!-- <li class="nav-item2">常見問答</li> -->
+                <li class="nav-item1">訂房系統人數過載，感謝您的耐心等候。</li>
             </ul>
         </div>
     </nav>
 
     <main class="loading-container">
         <div class="waiting-text">請不要關閉或刷新瀏覽器，系統正在依順序進入訂房畫面</div>
-        <div class="fireflies">
-            <div class="firefly"></div>
-            <div class="firefly"></div>
-            <div class="firefly"></div>
-            <div class="firefly"></div>
-            <div class="firefly"></div>
-        </div>
+        <div class="fireflies" id="fireflies-container"></div>
         <div class="loading-text">Loading...</div>
 
         <div class="map">
@@ -47,11 +40,43 @@
             
             <div class="faq-item">
                 <div class="faq-question">&gt; 我有付款完成嗎？</div>
-                <div class="faq-answer">&gt; 請別擔心，您同樣可至訂單查詢中找到您的付款狀態；如未成功，系統將會為您保留3小時，於時間內付款完成，訂單皆成立。</div>
+                <div class="faq-answer">&gt; 請別擔心，您同樣可至訂單查詢中找到您的付款狀態；如未成功，系統將會為您保留1小時，於時間內付款完成，訂單皆成立。</div>
             </div>
         </div>
 
     </main>
+
+    <script>
+        // 找到我們要放螢火蟲的容器
+        const container = document.getElementById('fireflies-container');
+        
+        // 設定你想要幾隻螢火蟲？ (可以隨意改數字測試！)
+        const fireflyCount = 5; 
+
+        // 用迴圈來一隻一隻產生螢火蟲
+        for (let i = 0; i < fireflyCount; i++) {
+            // 創造一個新的 div 元素
+            const firefly = document.createElement('div');
+            // 幫它加上 firefly 的 CSS 類別
+            firefly.classList.add('firefly');
+
+            // ⭐️ 魔法在這裡：產生隨機數字
+            // 隨機動畫時間 (1秒 ~ 2秒之間)，讓每隻飛的速度不一樣
+            const randomDuration = 1 + Math.random(); 
+            // 隨機延遲時間 (0秒 ~ -2秒之間)，讓它們不要同時上下飄
+            const randomDelay = Math.random() * -2; 
+
+            // 將隨機產生的動畫設定套用到這隻螢火蟲身上
+            firefly.style.animation = `float ${randomDuration}s ease-in-out ${randomDelay}s infinite alternate`;
+
+            // (選擇性) 也可以加上隨機大小，讓螢火蟲有大有小！
+            const randomScale = 1; // 0.7倍 ~ 1.2倍大小
+            firefly.style.transform = `scale(${randomScale})`;
+
+            // 把這隻設定好的螢火蟲放進容器裡
+            container.appendChild(firefly);
+        }
+    </script>
 
 </body>
 </html>
