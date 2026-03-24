@@ -15,17 +15,8 @@ body {
 .navbar {
     background-color: #000000;
     padding: 5px 0;
-    width: 100%; /* 確保導覽列背景佔滿全寬 */
+    width: 50%; /* 確保導覽列背景佔滿全寬 */
 }
-
-/* .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-} */
 
 .navbar-nav {
     display: flex;
@@ -47,7 +38,7 @@ body {
     align-items: center;
     list-style: none;
     color: white;
-    height: 20px;
+    height: 70px;
     /* 移除了原本過大的 margin，讓 space-between 自然發揮作用 */
 }
 .nav-item2 {
@@ -68,7 +59,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 117.5%;
+    width: 108.5%;
     max-width: 2000px; 
     padding: 0 20px;
     margin-top: -30px;
@@ -141,5 +132,35 @@ body {
     100% { opacity: 1; }
 }
 
+.faq-container {
+    position: absolute; /* 絕對定位，不影響中間的地圖和動畫排版 */
+    right: 12%;          /* 距離右邊框的距離 */
+    top: 10%;           /* 距離上方的距離，可依您的喜好上下微調 */
+    width: 280px;       /* 控制問答區塊的寬度 */
+    color: #76b532;
+    text-align: left;
+    font-size: 14px;
+    line-height: 2.0;   /* 增加行高，讓多行文字較好閱讀 */
+}
 
+faq-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.faq-item {
+    margin-bottom: 25px;
+}
+
+.faq-question {
+    font-weight: bold;
+    color: #76b532; /* 使用與螢火蟲相同的亮綠色，增加視覺一致性 */
+    margin-bottom: 8px;
+}
+
+.faq-answer {
+    color: #ffffff; /* 稍微調暗，讓問題與答案有層次感 */
+    margin-left: 15px; /* 答案稍微內縮 */
+}
 
