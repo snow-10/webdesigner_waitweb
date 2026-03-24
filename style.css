@@ -2,5 +2,131 @@ body {
     background-color: #000000; /* 將背景顏色設定為黑色 (也可以寫 #000000) */
     color: #ffffff;            /* 將預設的文字顏色設定為白色 */
     margin: 0;               /* 移除網頁預設的白邊 */
-    font-family: sans-serif; /* 設定一個乾淨的無襯線字體 */
+    padding: 0;
+    font-family: 'Helvetica Neue', Arial, '微軟正黑體', sans-serif;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
 }
+
+/* 導覽列樣式 */
+.navbar {
+    background-color: #000000;
+    padding: 5px 0;  /*高 寬*/
+}
+
+/* .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+} */
+
+.navbar-nav {
+    display: flex;
+    align-items: center; /* 垂直對齊 */
+    justify-content: center; /* 讓內容靠右 */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 15px; /* 項目之間的間距 */
+}
+
+.nav-item1 {
+    display: flex;
+    justify-content: center; /* 水平置中 */
+    align-items: center;     /* 垂直置中 */
+    
+    /* 你原本的樣式 */
+    list-style: none;
+    color: white;
+    height: 20px;           /* 確保容器有高度，置中才明顯 */
+    margin: 20px;
+}
+.nav-item2{
+    list-style: none;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    gap: 20px;
+    margin: 20px;
+    padding: 50px;
+    align-items: center;
+}
+
+
+/* .nav-item a:hover {
+    color: #d4ff00;
+} */
+
+
+/* 中央 Loading 區塊 */
+.loading-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 螢火蟲動畫區塊 */
+.fireflies {
+    display: flex;
+    gap: 25px;
+    height: 80px; /* 給予上下飄動的空間 */
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* 單顆螢火蟲的樣式 */
+.firefly {
+    width: 15px;
+    height: 15px;
+    background-color: #d4ff00;
+    border-radius: 50%;
+    /* 製作發光效果 */
+    box-shadow: 0 0 10px #d4ff00, 0 0 20px #d4ff00;
+    /* 套用上下飄動的動畫 */
+    animation: float 1.2s ease-in-out infinite alternate;
+}
+
+/* 讓每顆螢火蟲的動畫開始時間不同，達到「上下錯開」的效果 */
+.firefly:nth-child(1) { animation-delay: 0s; }
+.firefly:nth-child(2) { animation-delay: -0.6s; }
+.firefly:nth-child(3) { animation-delay: -0.3s; }
+.firefly:nth-child(4) { animation-delay: -0.9s; }
+.firefly:nth-child(5) { animation-delay: -0.2s; }
+
+/* 定義螢火蟲上下浮動與明滅的關鍵影格 */
+@keyframes float {
+    0% { 
+        transform: translateY(25px) scale(0.8); 
+        opacity: 0.4; 
+    }
+    100% { 
+        transform: translateY(-25px) scale(1.2); 
+        opacity: 1; 
+    }
+}
+
+/* Loading 文字樣式 */
+.loading-text {
+    font-size: 24px;
+    letter-spacing: 3px;
+    color: #d4ff00;
+    font-weight: bold;
+    /* 讓文字也有輕微的呼吸燈效果 */
+    animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+
+
+
