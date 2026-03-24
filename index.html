@@ -47,33 +47,26 @@
     </main>
 
     <script>
-        // 找到我們要放螢火蟲的容器
+        //放螢火蟲的容器
         const container = document.getElementById('fireflies-container');
         
-        // 設定你想要幾隻螢火蟲？ (可以隨意改數字測試！)
         const fireflyCount = 5; 
 
-        // 用迴圈來一隻一隻產生螢火蟲
+        //用迴圈產生螢火蟲
         for (let i = 0; i < fireflyCount; i++) {
-            // 創造一個新的 div 元素
             const firefly = document.createElement('div');
-            // 幫它加上 firefly 的 CSS 類別
             firefly.classList.add('firefly');
 
-            // ⭐️ 魔法在這裡：產生隨機數字
-            // 隨機動畫時間 (1秒 ~ 2秒之間)，讓每隻飛的速度不一樣
+            //隨機時間，讓每個光點的速度不一樣
             const randomDuration = 1 + Math.random(); 
-            // 隨機延遲時間 (0秒 ~ -2秒之間)，讓它們不要同時上下飄
             const randomDelay = Math.random() * -2; 
 
-            // 將隨機產生的動畫設定套用到這隻螢火蟲身上
+            //將產生的設定套用到特定螢火蟲身上
             firefly.style.animation = `float ${randomDuration}s ease-in-out ${randomDelay}s infinite alternate`;
 
-            // (選擇性) 也可以加上隨機大小，讓螢火蟲有大有小！
-            const randomScale = 1; // 0.7倍 ~ 1.2倍大小
+            const randomScale = 1;
             firefly.style.transform = `scale(${randomScale})`;
 
-            // 把這隻設定好的螢火蟲放進容器裡
             container.appendChild(firefly);
         }
     </script>

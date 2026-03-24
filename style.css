@@ -1,7 +1,7 @@
 body {
-    background-color: #000000; /* 將背景顏色設定為黑色 (也可以寫 #000000) */
-    color: #ffffff;            /* 將預設的文字顏色設定為白色 */
-    margin: 0;               /* 移除網頁預設的白邊 */
+    background-color: #000000; /*將背景設定為黑色*/
+    color: #ffffff; /*字體為白色*/
+    margin: 0;
     padding: 0;
     font-family: 'Helvetica Neue', Arial, '微軟正黑體', sans-serif;
     display: flex;
@@ -10,24 +10,16 @@ body {
     height: 100vh;
 }
 
-/* 導覽列樣式 */
+/* 導覽列 */
 .navbar {
     padding: 5px 0;
-    width: 50%; /* 確保導覽列背景佔滿全寬 */
+    width: 50%;
 }
 
 .navbar-nav {
     display: flex;
-    align-items: center; /* 讓內容垂直置中 */
-    justify-content: space-between; /* 將內容推向兩側：Logo在左，常見問答在右 */
-    
-    /* 透過設定最大寬度並 margin auto，讓整個區塊「置中」 */
-    /* 這樣 Logo 就會剛好落在「中間偏左」的位置，而不是緊貼螢幕最左邊 */
     max-width: 1000px; 
-    margin: 0 auto; 
-    
-    list-style: none;
-    padding: 0 20px; /* 給左右兩側一點呼吸空間 */
+    padding: 0 20px;
 }
 
 .nav-item1 {
@@ -38,20 +30,19 @@ body {
     list-style: none;
     color: white;
     height: 70px;
-    /* 移除了原本過大的 margin，讓 space-between 自然發揮作用 */
 }
 
 .waiting-text{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 108%;
+    width: 107%;
     max-width: 2000px; 
     padding: 0 20px;
-    margin-top: -15px;
+    margin-top: -27px;
 }
 
-/* 中央 Loading 區塊 */
+/* Loading */
 .loading-container {
     flex: 1;
     display: flex;
@@ -60,36 +51,29 @@ body {
     align-items: center;
 }
 
-/* 螢火蟲動畫區塊 */
+/* 螢火蟲區塊 */
 .fireflies {
     display: flex;
     gap: 25px;
-    height: 80px; /* 給予上下飄動的空間 */
+    height: 80px; /*上下空間*/
     align-items: center;
     margin-bottom: 10px;
     margin-top: 20px;
 }
 
-/* 單顆螢火蟲的樣式 */
+/* 螢火蟲樣式 */
 .firefly {
     width: 15px;
     height: 15px;
     background-color: #d4ff00;
     border-radius: 50%;
-    /* 製作發光效果 */
+    /* 發光 */
     box-shadow: 0 0 10px #d4ff00, 0 0 20px #d4ff00;
-    /* 套用上下飄動的動畫 */
+    /* 上下飄動 */
     animation: float 1.2s ease-in-out infinite alternate;
 }
 
-/* 讓每顆螢火蟲的動畫開始時間不同，達到「上下錯開」的效果 */
-/* .firefly:nth-child(1) { animation-delay: 0s; }
-.firefly:nth-child(2) { animation-delay: -0.6s; }
-.firefly:nth-child(3) { animation-delay: -0.3s; }
-.firefly:nth-child(4) { animation-delay: -0.9s; }
-.firefly:nth-child(5) { animation-delay: -0.2s; } */
-
-/* 定義螢火蟲上下浮動與明滅的關鍵影格 */
+/* 定義螢火蟲上下浮動與明滅 */
 @keyframes float {
     0% { 
         transform: translateY(25px) scale(1.0); 
@@ -101,13 +85,13 @@ body {
     }
 }
 
-/* Loading 文字樣式 */
+/* Loading */
 .loading-text {
     font-size: 23px;
     letter-spacing: 5px;
     color: #d4ff00;
     font-weight: bold;
-    /* 讓文字也有輕微的呼吸燈效果 */
+    /* 文字閃爍 */
     animation: pulse 1.2s infinite alternate;
     margin-top: -10px;
     margin-bottom: 20px;
@@ -118,15 +102,16 @@ body {
     100% { opacity: 0.6; }
 }
 
+/* 常見問題 */
 .faq-container {
-    position: absolute; /* 絕對定位，不影響中間的地圖和動畫排版 */
-    right: 12%;          /* 距離右邊框的距離 */
-    top: 10%;           /* 距離上方的距離，可依您的喜好上下微調 */
-    width: 280px;       /* 控制問答區塊的寬度 */
+    position: absolute;
+    right: 12%;
+    top: 10%;
+    width: 280px;
     color: #76b532;
     text-align: left;
     font-size: 14px;
-    line-height: 2.0;   /* 增加行高，讓多行文字較好閱讀 */
+    line-height: 2.0;
 }
 
 .faq-title {
@@ -142,13 +127,12 @@ body {
 .faq-question {
     font-size: 20px;
     font-weight: bold;
-    color: #76b532; /* 使用與螢火蟲相同的亮綠色，增加視覺一致性 */
+    color: #76b532;
     margin-bottom: 8px;
 }
 
 .faq-answer {
     font-size: 16px;
-    color: #ffffff; /* 稍微調暗，讓問題與答案有層次感 */
-    margin-left: 15px; /* 答案稍微內縮 */
+    color: #ffffff;
+    margin-left: 15px;
 }
-
